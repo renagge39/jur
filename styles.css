@@ -1,0 +1,236 @@
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .field-card {
+            display: none;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        
+        }
+        .field-card.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0); 
+            
+        }
+        .field-card.enter {
+            opacity: 0;
+            transform: translateX(-100%); /* Card masuk dari kiri */
+        }
+        
+        .field-card.enter-active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 50px;
+            height: 25px;
+            background-color: #f40000;
+            border-radius: 50px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Styling untuk checkbox saat centang */
+        input[type="checkbox"]:checked {
+            background-color: #4CAF50;
+        }
+
+        /* Lingkaran dalam checkbox */
+        input[type="checkbox"]:before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: left 0.3s ease;
+        }
+
+        /* Pindahkan lingkaran saat checkbox dicentang */
+        input[type="checkbox"]:checked:before {
+            left: 27px;
+        }
+
+        /* Styling untuk label */
+        label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        /* Styling untuk teks On/Off */
+        span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .container {
+            margin: 20px 0;
+        }
+
+        /* Styling untuk status update */
+        #status {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4CAF50;
+            
+        }
+        .chart-box {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .buttons {
+            text-align: center;
+            left: 23rem;
+            top: 35rem;
+            position: fixed;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buttons button:hover {
+            background-color: #fdfdfe;
+            color: #007bff;
+            border: #007bff solid 1px;
+        }
+        .kotak {
+            width: 3rem;
+            height: 3rem;
+            background-color: #ccc;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .on {
+            background-color: rgb(8, 193, 8);
+        }
+
+        .off {
+            background-color: red;
+        }
+
+        .status {
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        .btn-on {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-off {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .kotak-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Spinner styles */
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            border-width: 0.3em;
+            margin-top: 10px;
+        }
+
+        /* Hide the response initially */
+        #response {
+            display: none;
+        }
+
+        /* Show the spinner when loading */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+        @keyframes countdownAnimation {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+        }
+        
+        .countdown {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f9f9f9;
+        }
+        
+        .countdown.animate {
+            animation: countdownAnimation 1s infinite alternate;
+        }
+        #multiChart {
+            width: 70%!important;  /* Lebar chart */
+            height: 280px!important; /* Tinggi chart */
+        }
